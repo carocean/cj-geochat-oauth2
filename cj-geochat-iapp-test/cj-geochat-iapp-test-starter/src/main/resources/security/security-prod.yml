@@ -1,7 +1,5 @@
 spring:
   security:
-    connect_check_token_url:
-      - http://localhost:8080/oauth2/v1/check_token
     whitelist:
       - /login
       - /oauth/**

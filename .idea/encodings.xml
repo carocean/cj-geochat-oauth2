@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/cj-geochat-iapp-test/cj-geochat-iapp-test-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-iapp-test/cj-geochat-iapp-test-remote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-iapp-test/cj-geochat-iapp-test-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-iapp-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-iapp-test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-middle-test/cj-geochat-middle-test-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-middle-test/cj-geochat-middle-test-remote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-middle-test/cj-geochat-middle-test-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-middle-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-middle-test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oapp-test/cj-geochat-oapp-test-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oapp-test/cj-geochat-oapp-test-remote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oapp-test/cj-geochat-oapp-test-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oapp-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oapp-test/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-gateway/cj-geochat-oauth2-gateway-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-server/cj-geochat-oauth2-server-remote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-server/cj-geochat-oauth2-server-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

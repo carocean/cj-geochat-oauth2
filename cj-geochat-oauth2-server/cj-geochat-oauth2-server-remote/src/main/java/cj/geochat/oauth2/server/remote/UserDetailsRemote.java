@@ -1,4 +1,4 @@
-package cj.geochat.server.authorization.remote;
+package cj.geochat.oauth2.server.remote;
 
 import cj.geochat.middle.uc.LoginAccountCategory;
 import cj.geochat.middle.uc.UserDetails;

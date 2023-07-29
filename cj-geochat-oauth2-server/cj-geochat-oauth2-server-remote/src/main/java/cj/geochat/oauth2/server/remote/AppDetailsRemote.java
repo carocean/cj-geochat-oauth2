@@ -1,4 +1,4 @@
-package cj.geochat.server.authorization.remote;
+package cj.geochat.oauth2.server.remote;
 
 import cj.geochat.ability.util.GeochatException;
 import cj.geochat.middle.uc.AppDetails;

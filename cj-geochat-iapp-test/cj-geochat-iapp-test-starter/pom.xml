@@ -16,5 +16,18 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <dependencies>
+        <dependency>
+            <groupId>cj.geochat</groupId>
+            <artifactId>cj-geochat-iapp-test-framework</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cj.geochat</groupId>
+            <artifactId>cj-geochat-iapp-test-remote</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cj.geochat</groupId>
+            <artifactId>cj-geochat-ability-eureka</artifactId>
+        </dependency>
+    </dependencies>
 </project>

@@ -12,9 +12,9 @@
     <artifactId>cj-geochat-oapp-test</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>cj-geochat-oauth2-oapp-test-framework</module>
-        <module>cj-geochat-oauth2-oapp-test-remote</module>
-        <module>cj-geochat-oauth2-oapp-test-starter</module>
+        <module>cj-geochat-oapp-test-framework</module>
+        <module>cj-geochat-oapp-test-remote</module>
+        <module>cj-geochat-oapp-test-starter</module>
     </modules>
 
     <properties>
@@ -33,12 +33,12 @@
         <dependencies>
             <dependency>
                 <groupId>cj.geochat</groupId>
-                <artifactId>cj-geochat-oauth2-oapp-test-framework</artifactId>
+                <artifactId>cj-geochat-oapp-test-framework</artifactId>
                 <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>cj.geochat</groupId>
-                <artifactId>cj-geochat-oauth2-oapp-test-remote</artifactId>
+                <artifactId>cj-geochat-oapp-test-remote</artifactId>
                 <version>1.0.0</version>
             </dependency>
         </dependencies>

@@ -1,4 +1,4 @@
-package cj.geochat.oauth2.oapp.test.rest;
+package cj.geochat.oapp.test.rest;
 
 import cj.geochat.ability.api.annotation.ApiResult;
 import io.swagger.v3.oas.annotations.Operation;

@@ -1,16 +1,13 @@
-package cj.geochat.server.authorization;
+package cj.geochat.oauth2.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@SpringBootApplication(scanBasePackages = {"cj.geochat.server.authorization"})
-@EnableDiscoveryClient
-public class CjGeochatServerAuthStarterApplication {
+@SpringBootApplication(scanBasePackages = {"cj.geochat.oauth2.server"})
+public class ServerOAuth2StarterApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CjGeochatServerAuthStarterApplication.class, args);
+        SpringApplication.run(ServerOAuth2StarterApplication.class, args);
     }
 
 }

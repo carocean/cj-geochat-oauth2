@@ -10,11 +10,30 @@
     </parent>
 
     <artifactId>cj-geochat-oauth2-server</artifactId>
-
+    <packaging>pom</packaging>
+    <modules>
+        <module>cj-geochat-oauth2-server-remote</module>
+        <module>cj-geochat-oauth2-server-starter</module>
+    </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+            </properties>
+        </profile>
+    </profiles>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cj.geochat</groupId>
+                <artifactId>cj-geochat-oauth2-server-remote</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

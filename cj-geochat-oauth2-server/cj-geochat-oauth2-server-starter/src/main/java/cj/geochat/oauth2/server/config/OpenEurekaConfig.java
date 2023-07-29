@@ -1,4 +1,4 @@
-package cj.geochat.oauth2.oapp.test.config;
+package cj.geochat.oauth2.server.config;
 
 import cj.geochat.ability.eureka.annotation.EnableCjEureka;
 import org.springframework.context.annotation.Configuration;

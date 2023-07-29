@@ -10,6 +10,12 @@
     </parent>
 
     <artifactId>cj-geochat-middle-test</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>cj-geochat-middle-test-framework</module>
+        <module>cj-geochat-middle-test-remote</module>
+        <module>cj-geochat-middle-test-starter</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

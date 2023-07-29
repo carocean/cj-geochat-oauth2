@@ -1,5 +1,6 @@
 package cj.geochat.oauth2.gateway.config;
 
+import cj.geochat.ability.oauth.gateway.ICheckPermission;
 import cj.geochat.ability.oauth.gateway.annotation.EnableCjGateway;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,5 +29,12 @@ public class OpenGatewayConfig {
             }
         });
         return restTemplate;
+    }
+
+    @Bean
+    public ICheckPermission createCheckPermission() {
+        //所有中台的服务一律拦截掉，网关只充许geochat app通过，
+        return (antPathMatcher, username, role, accessUrl) ->
+                !antPathMatcher.match("/cj-geochat-middle-*/*/**", accessUrl);
     }
 }

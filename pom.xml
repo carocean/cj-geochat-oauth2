@@ -3,15 +3,35 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <parent>
+        <groupId>cj.geochat</groupId>
+        <artifactId>cj-geochat-parent</artifactId>
+        <!--不要指定为snapshots版。只指定正式版，会依据父pom的环境而变化-->
+        <version>1.5.0</version>
+        <!--                <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    </parent>
     <groupId>cj.geochat</groupId>
     <artifactId>cj-geochat-oauth2</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+            </properties>
+        </profile>
+    </profiles>
+    <modules>
+        <module>cj-geochat-oauth2-server</module>
+        <module>cj-geochat-oapp-test</module>
+        <module>cj-geochat-oauth2-gateway</module>
+        <module>cj-geochat-iapp-test</module>
+        <module>cj-geochat-middle-test</module>
+    </modules>
 </project>

@@ -1,9 +1,9 @@
-package cj.geochat.oauth2.oapp.test;
+package cj.geochat.oapp.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"cj.geochat.oauth2.oapp.test"})
+@SpringBootApplication(scanBasePackages = {"cj.geochat.oapp.test"})
 public class OAppTestStarterApplication {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package cj.geochat.oauth2.oapp.test.config;
+package cj.geochat.oapp.test.config;
 
 import cj.geochat.ability.oauth.app.annotation.EnableCjOutsideApp;
 import org.springframework.context.annotation.Bean;

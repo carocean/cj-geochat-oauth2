@@ -3,8 +3,9 @@ spring:
     connect_check_token_url:
       - http://localhost:8080/oauth2/v1/check_token
     whitelist:
-      - /*/wagger-ui.html**
+      - /*/swagger-ui.html**
       - /*/doc.html**
+      - /*/v3/api-docs/**
     staticlist:
       - /assets/**
       - /css/**

@@ -1,0 +1,39 @@
+server:
+  #原8080
+  port: 9000
+  servlet:
+    context-path: /
+spring:
+  profiles:
+    active: ${cj.geochat.spring.profiles.active:dev}
+  mvc:
+    pathmatch:
+      #swagger2的bug，只认这种方式，而springboot2.6默认已不是这种匹配模式。否则启动时报错
+      #不配的话报：at springfox.documentation.spring.web.WebMvcPatternsRequestConditionWrapper.getPatterns
+      matching-strategy: ANT_PATH_MATCHER
+  application:
+    #调用者feign只认spring.application.name，不认eureka.instance.appname配置应用名
+    #所以不论服务提供者还是feign消费者，spring.application.name和eureka.instance.appname都配置就最好了
+    #feign调用方大小写不区分，而注册中心永远显示为大写
+    name: cj-geochat-server-authorization
+  jta:
+    atomikos:
+      connectionfactory:
+        max-lifetime:
+#    sentinel:
+#      master: local-master
+#      nodes: 192.168.88.103:26380,192.168.88.103:26379
+#      password: 123456
+logging:
+  level:
+    root: info
+management:
+  endpoints:
+    web:
+      exposure:
+        #在不重启应用的情况下，放开从配置中心刷新配置的方法，refresh|bus-refresh|*
+        #刷新原理是用actuator重启了应用
+        #不清楚支持哪些方法可在浏览器中查看支持的方法：http://localhost:30300/actuator/
+        #用postman刷新 POST http://localhost:30300/actuator/refresh
+        #POST http://localhost:30300/actuator/bus-refresh
+        include: refresh

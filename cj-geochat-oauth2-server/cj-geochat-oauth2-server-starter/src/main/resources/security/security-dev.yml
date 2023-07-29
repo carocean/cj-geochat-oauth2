@@ -1,0 +1,20 @@
+spring:
+  security:
+    #web认证端的用户确认页和登录页地址
+    web_auth:
+      host: ${cj.geochat.security_auth_web_host:http://localhost:8060}
+      confirm_access_url: /confirm_access
+      login_url: /login
+    #app认证端的用户确认页和登录页地址
+    app_auth:
+      host: ${cj.geochat.security_auth_app_host:geochat://}
+      confirm_access_url: /confirm_access
+      login_url: /login
+    whitelist:
+      - /login
+      - /oauth/**
+      - /logout
+    staticlist:
+      - /assets/**
+      - /css/**
+      - /images/**

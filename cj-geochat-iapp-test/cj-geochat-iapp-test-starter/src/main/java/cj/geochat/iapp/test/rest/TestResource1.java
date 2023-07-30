@@ -1,6 +1,7 @@
 package cj.geochat.iapp.test.rest;
 
 import cj.geochat.ability.api.annotation.ApiResult;
+import cj.geochat.ability.util.GeochatRuntimeException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1")
-@Tag(description = "测试方法权限",name = "测试方法权限")
+@Tag(description = "测试方法权限",name = "测试方法权限1")
 @Slf4j
 public class TestResource1 {
 
@@ -30,6 +31,7 @@ public class TestResource1 {
     public String demo(@Parameter(description = "字串") String test) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         log.info("authentication: {}", authentication);
+//        throw new GeochatRuntimeException("4000", "hello:" + authentication.getPrincipal() + " " + test);
         return "hello:"+authentication.getPrincipal();
     }
 }

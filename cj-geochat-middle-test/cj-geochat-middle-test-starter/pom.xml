@@ -23,6 +23,10 @@
         </dependency>
         <dependency>
             <groupId>cj.geochat</groupId>
+            <artifactId>cj-geochat-ability-banner</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cj.geochat</groupId>
             <artifactId>cj-geochat-ability-web</artifactId>
             <type>pom</type>
         </dependency>

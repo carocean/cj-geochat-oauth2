@@ -48,12 +48,17 @@ springdoc:
       paths-to-match:
         - /api/v1/**
         - /api/v2/**
+        - /public/v1/**
     - group: v1-api
       paths-to-match:
         - /api/v1/**
     - group: v2-api
       paths-to-match:
         - /api/v2/**
+    #开放的api在swagger-ui中可删除安全参数直接请求api
+    - group: v1-public-api
+      paths-to-match:
+        - /public/v1/**
 #    disable-swagger-default-url: true
 # knife4j的增强配置，不需要增强可以不配
 # https://doc.xiaominfo.com/docs/quick-start

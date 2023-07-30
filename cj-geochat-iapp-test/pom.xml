@@ -34,6 +34,11 @@
                 <artifactId>cj-geochat-iapp-test-remote</artifactId>
                 <version>1.0.0</version>
             </dependency>
+            <dependency>
+                <groupId>cj.geochat</groupId>
+                <artifactId>cj-geochat-middle-test-framework</artifactId>
+                <version>1.0.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

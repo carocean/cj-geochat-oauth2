@@ -29,9 +29,9 @@
     </profiles>
     <modules>
         <module>cj-geochat-oauth2-server</module>
-        <module>cj-geochat-oapp-test</module>
+        <module>cj-geochat-test-oapp</module>
         <module>cj-geochat-oauth2-gateway</module>
-        <module>cj-geochat-iapp-test</module>
-        <module>cj-geochat-middle-test</module>
+        <module>cj-geochat-test-iapp</module>
+        <module>cj-geochat-test-middle</module>
     </modules>
 </project>

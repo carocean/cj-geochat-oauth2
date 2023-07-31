@@ -1,7 +1,7 @@
 spring:
   security:
     connect_check_token_url:
-      - http://localhost:8080/oauth2/v1/check_token
+      - ${cj.geochat.connect_check_token_url:http://localhost:9000/oauth2/v1/check_token}
     whitelist:
       - /*/public/v**
       - /*/swagger-ui.html**

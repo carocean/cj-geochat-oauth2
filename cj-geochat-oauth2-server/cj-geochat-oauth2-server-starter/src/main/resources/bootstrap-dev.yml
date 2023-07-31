@@ -35,3 +35,11 @@ eureka:
     #注册中心点状态跳转到swagger
     status-page-url: http://${spring.cloud.client.ip-address}:${server.port}${server.servlet.context-path}doc.html
 #    hostname: ${geochat.hostname:localhost}
+
+app:
+  test:
+    feign:
+      adapter:
+        docker:
+          uc:
+            url: geochat-ecs.local:40000

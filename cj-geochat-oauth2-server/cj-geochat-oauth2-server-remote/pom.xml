@@ -23,8 +23,7 @@
         </dependency>
         <dependency>
             <groupId>cj.geochat</groupId>
-            <artifactId>cj-geochat-middle-uc-framework</artifactId>
-            <version>1.0.0</version>
+            <artifactId>cj-geochat-uc-middle-framework</artifactId>
         </dependency>
     </dependencies>
     <build>

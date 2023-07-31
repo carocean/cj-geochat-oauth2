@@ -6,6 +6,7 @@ import cj.geochat.ability.oauth.server.annotation.EnableCjOAuth2Server;
 import cj.geochat.ability.oauth.server.repository.InMemoryRegisteredAppRepository;
 import cj.geochat.ability.oauth.server.repository.RegisteredAppRepository;
 import cj.geochat.ability.oauth.server.settings.AuthorizationServerSettings;
+import cj.geochat.ability.oauth.server.user.details.GeochatUser;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.User;
@@ -27,38 +28,25 @@ public class OpenOAuth2ServerConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public RegisteredAppRepository registeredAppRepository(PasswordEncoder passwordEncoder) {
-        RegisteredApp registeredApp = RegisteredApp.withId(UUID.randomUUID().toString())
-                .appId("demo-client-id")
-                .appSecret(passwordEncoder.encode("demo-client-secret"))
-//                .appSecret("{noop}demo-client-secret")
-                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-                .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-                .redirectUri("http://127.0.0.1:8081/login/oauth2/code/client-id-1")
-                .redirectUri("http://127.0.0.1:8081/login/oauth2/code/client-id-2")
-                .scope("message.read")
-                .scope("message.write")
-                .scope("user_info")
-                .scope("pull_requests")
-                .requireAuthorizationConsent(true)
-                .build();
-
-        return new InMemoryRegisteredAppRepository(registeredApp);
-    }
-    @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-        String bcryptPassword = passwordEncoder.encode("password");
-        boolean b = Pattern.compile("\\A\\$2(a|y|b)?\\$(\\d\\d)\\$[./0-9A-Za-z]{53}").matcher(bcryptPassword).matches();
-        System.out.println("matcher:" + bcryptPassword);
-        UserDetails userDetails = User.withUsername("user")
-                .password(bcryptPassword)
-//                .password("password")
-                .roles("USER")
-                .build();
-
-        return new InMemoryUserDetailsManager(userDetails);
-    }
+//    @Bean
+//    public RegisteredAppRepository registeredAppRepository(PasswordEncoder passwordEncoder) {
+//        RegisteredApp registeredApp = RegisteredApp.withId(UUID.randomUUID().toString())
+//                .appId("demo-client-id")
+//                .appSecret(passwordEncoder.encode("demo-client-secret"))
+////                .appSecret("{noop}demo-client-secret")
+//                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+//                .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
+//                .redirectUri("http://127.0.0.1:8081/login/oauth2/code/client-id-1")
+//                .redirectUri("http://127.0.0.1:8081/login/oauth2/code/client-id-2")
+//                .scope("message.read")
+//                .scope("message.write")
+//                .scope("user_info")
+//                .scope("pull_requests")
+//                .requireAuthorizationConsent(true)
+//                .build();
+//
+//        return new InMemoryRegisteredAppRepository(registeredApp);
+//    }
 
     @Bean
     public AuthorizationServerSettings authorizationServerSettings() {

@@ -34,6 +34,11 @@
                 <artifactId>cj-geochat-oauth2-server-remote</artifactId>
                 <version>1.0.0</version>
             </dependency>
+            <dependency>
+                <groupId>cj.geochat</groupId>
+                <artifactId>cj-geochat-uc-middle-framework</artifactId>
+                <version>2.0.5</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

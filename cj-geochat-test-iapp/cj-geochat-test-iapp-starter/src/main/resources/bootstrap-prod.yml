@@ -32,5 +32,5 @@ eureka:
     #eureka.instance.appname的配置名在注册中心会覆盖spring.application.name而显示，但feign认只spring.application.name
     appname: ${spring.application.name}
     #注册中心点状态跳转到swagger
-    status-page-url: http://geochat-ecs.local:${server.port}${server.servlet.context-path}/doc.html
+    status-page-url: http://geochat-ecs.local:${server.port}${server.servlet.context-path}doc.html
     hostname: ${cj.geochat.hostname:localhost}

@@ -22,7 +22,7 @@ public class TestResource2 {
 
     @Operation(summary = "是否有权",description = "是否有权 desc")
     @GetMapping(path = "/hello")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasRole('general_users')")
 //    @PreAuthorize("hasAuthority('SCOPE_message.read')")
     @ApiResult
     @ApiResponses({@ApiResponse(responseCode = "2000", description = "ok"),

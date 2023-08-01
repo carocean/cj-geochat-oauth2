@@ -60,12 +60,18 @@ public class GeochatRegisteredAppRepository implements RegisteredAppRepository {
                 .appName(details.getAppName())
                 .requireAuthorizationConsent(details.isAutoapprove())
                 .reuseRefreshTokens(details.isReuseRefreshTokens())
-                .authorizationCodeTimeToLive(Duration.ofSeconds(details.getAuthCodeValidity()>0?details.getAuthCodeValidity():2592000L))
-                .authorizationAccessTokenTimeToLive(Duration.ofSeconds(details.getAccessTokenValidity()>0?details.getAccessTokenValidity():600L))
-                .authorizationRefreshTokenTimeToLive(Duration.ofSeconds(details.getRefreshTokenValidity()>0?details.getRefreshTokenValidity():2592000L))
-                .authorizationGrantTypes(item -> details.getGrantTypes().stream().map(gt -> new AuthorizationGrantType(gt)))
-                .redirectUris(e -> details.getRedirectUris())
-                .scopes(e -> details.getScopes())
+                .authorizationCodeTimeToLive(Duration.ofSeconds(details.getAuthCodeValidity() > 0 ? details.getAuthCodeValidity() : 2592000L))
+                .authorizationAccessTokenTimeToLive(Duration.ofSeconds(details.getAccessTokenValidity() > 0 ? details.getAccessTokenValidity() : 600L))
+                .authorizationRefreshTokenTimeToLive(Duration.ofSeconds(details.getRefreshTokenValidity() > 0 ? details.getRefreshTokenValidity() : 2592000L))
+                .authorizationGrantTypes(col -> {
+                    details.getGrantTypes().forEach(e -> col.add(new AuthorizationGrantType(e)));
+                })
+                .redirectUris(col -> {
+                    details.getRedirectUris().forEach(e -> col.add(e));
+                })
+                .scopes(col -> {
+                    details.getScopes().forEach(e -> col.add(e));
+                })
                 .build();
     }
 }

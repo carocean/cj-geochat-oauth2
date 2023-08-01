@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestResource1 {
 
     @GetMapping(path = "/hello")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasRole('general_users')")
 //    @PreAuthorize("hasAuthority('SCOPE_message.read')")
     @Operation(summary = "是否有权",description = "是否有权 desc")
     @ApiResult

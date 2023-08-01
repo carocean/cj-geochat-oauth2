@@ -5,12 +5,15 @@ import cj.geochat.oauth2.server.remote.UserDetailsRemote;
 import cj.geochat.uc.middle.LoginAccountCategory;
 import cj.geochat.uc.middle.UserStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @Service
 public class GeochatUserDetailsService implements UserDetailsService {
@@ -39,6 +42,7 @@ public class GeochatUserDetailsService implements UserDetailsService {
                 .accountExpired(false)
                 .credentialsExpired(false)
                 .accountLocked(false)
+                .roles(userDetails.getRoles().toArray(new String[0]))
                 .build();
     }
 

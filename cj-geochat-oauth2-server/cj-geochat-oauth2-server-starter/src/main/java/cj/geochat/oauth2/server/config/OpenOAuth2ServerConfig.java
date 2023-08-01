@@ -28,26 +28,6 @@ public class OpenOAuth2ServerConfig {
         return new BCryptPasswordEncoder();
     }
 
-//    @Bean
-//    public RegisteredAppRepository registeredAppRepository(PasswordEncoder passwordEncoder) {
-//        RegisteredApp registeredApp = RegisteredApp.withId(UUID.randomUUID().toString())
-//                .appId("demo-client-id")
-//                .appSecret(passwordEncoder.encode("demo-client-secret"))
-////                .appSecret("{noop}demo-client-secret")
-//                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-//                .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-//                .redirectUri("http://127.0.0.1:8081/login/oauth2/code/client-id-1")
-//                .redirectUri("http://127.0.0.1:8081/login/oauth2/code/client-id-2")
-//                .scope("message.read")
-//                .scope("message.write")
-//                .scope("user_info")
-//                .scope("pull_requests")
-//                .requireAuthorizationConsent(true)
-//                .build();
-//
-//        return new InMemoryRegisteredAppRepository(registeredApp);
-//    }
-
     @Bean
     public AuthorizationServerSettings authorizationServerSettings() {
         return AuthorizationServerSettings.builder()

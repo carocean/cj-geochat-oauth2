@@ -43,4 +43,4 @@ app:
       adapter:
         docker:
           uc:
-            url: localhost:8085
+            url: localhost:8084

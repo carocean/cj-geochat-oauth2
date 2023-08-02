@@ -27,6 +27,10 @@
         </dependency>
         <dependency>
             <groupId>cj.geochat</groupId>
+            <artifactId>cj-geochat-ability-oauth-server-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cj.geochat</groupId>
             <artifactId>cj-geochat-oauth2-server-remote</artifactId>
         </dependency>
         <dependency>

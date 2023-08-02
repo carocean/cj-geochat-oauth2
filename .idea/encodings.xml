@@ -2,25 +2,37 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-gateway/cj-geochat-oauth2-gateway-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-gateway/cj-geochat-oauth2-gateway-starter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-server/cj-geochat-oauth2-server-remote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-server/cj-geochat-oauth2-server-remote/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-server/cj-geochat-oauth2-server-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-server/cj-geochat-oauth2-server-starter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-oauth2-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-iapp/cj-geochat-test-iapp-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-test-iapp/cj-geochat-test-iapp-framework/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-iapp/cj-geochat-test-iapp-remote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-test-iapp/cj-geochat-test-iapp-remote/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-iapp/cj-geochat-test-iapp-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-test-iapp/cj-geochat-test-iapp-starter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-iapp/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-iapp/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-middle/cj-geochat-test-middle-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-test-middle/cj-geochat-test-middle-framework/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-middle/cj-geochat-test-middle-remote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-test-middle/cj-geochat-test-middle-remote/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-middle/cj-geochat-test-middle-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-test-middle/cj-geochat-test-middle-starter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-middle/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-middle/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-oapp/cj-geochat-test-oapp-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-test-oapp/cj-geochat-test-oapp-framework/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-oapp/cj-geochat-test-oapp-remote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-test-oapp/cj-geochat-test-oapp-remote/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-oapp/cj-geochat-test-oapp-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cj-geochat-test-oapp/cj-geochat-test-oapp-starter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-oapp/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cj-geochat-test-oapp/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />

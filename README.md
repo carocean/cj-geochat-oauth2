@@ -10,7 +10,15 @@
 而应该是一套架构的标准接口，就像spring一样你必须在其接口标准下实现你的功能。因此本项目提供了一整套微服务应用化标准接口。另外以下项目可以结合本人开源的基础能力库、配置中心、注册中心直接搭建你的微服务云架构。
 > 为了便于开发和部署，geochat的所有项目均支持docker,docker-compose,k8s的自动发布和部署，你需要配置你自己的nexus和docker-desktop，以便进行开发。
 
-## 认证服务器
+本文档目录
+- 认证服务器
+- 网关
+- 内应用
+- 外应用
+- 中台应用
+- 基础能力库
+
+## 1、认证服务器
 
 > cj-geochat-oauth2-server
 
@@ -33,7 +41,7 @@
 </dependency>
 ```
 
-## api网关
+## 2、api网关
 
 > cj-geochat-oauth2-gateway
 
@@ -48,7 +56,7 @@
 </dependency>
 ```
 
-## 内应用（网关后置应用标准）
+## 3、内应用（网关后置应用标准）
 
 > cj-geochat-test-iapp  
 > 内应用专有名词：iapp，即：inside app，表示该应用是网关内的应用，处理来自网关的请求。但中台应用（middle app)不同在于，
@@ -128,7 +136,7 @@ public class OpenSwaggerConfig {
 }
 ```
 
-## 外应用标准（不需要网关的应用）
+## 4、外应用标准（不需要网关的应用）
 > cj-geochat-test-oapp  
 > 
 > 由于外应用是直接面向公网的应用，因此它和网关一样提供鉴权能力，同时还具有访问控制能力。  
@@ -163,7 +171,7 @@ public class OpenOutsideAppConfig {
 ```
 如需要其它能力可自行添加。
 
-## 中台服务标准
+## 5、中台服务标准
 > cj-geochat-test-middle  
 > 
 > 中台应用不对外网开放，被封密在网关之内，因此没有权限和用户上下文，是springboot的一般微服务。  
@@ -173,6 +181,6 @@ public class OpenOutsideAppConfig {
 > 
 > 需要什么能力就自行引用，这点根iapp和oapp引用能力的方式相同。
 > 
-## 能力库
+## 6、能力库
 > 以上均用到geochat能力库，更多能力，请到geochat能力库中查看，能力库项目的开源地址如下：  
 > [https://github.com/carocean/cj-geochat-ultimate](https://github.com/carocean/cj-geochat-ultimate)

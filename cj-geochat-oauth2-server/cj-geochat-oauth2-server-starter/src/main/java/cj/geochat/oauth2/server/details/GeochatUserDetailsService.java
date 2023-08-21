@@ -4,6 +4,7 @@ import cj.geochat.ability.oauth.server.user.details.GeochatUser;
 import cj.geochat.oauth2.server.remote.UserDetailsRemote;
 import cj.geochat.uc.middle.LoginAccountCategory;
 import cj.geochat.uc.middle.UserStatus;
+import com.github.f4b6a3.ulid.UlidCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -21,16 +22,34 @@ public class GeochatUserDetailsService implements UserDetailsService {
     UserDetailsRemote userDetailsRemote;
 
     Pattern phone = Pattern.compile("1[3-9]\\d{9}");
-    Pattern email = Pattern.compile("\\w{1,30}@[a-zA-Z0-9]{2,20}(\\.[a-zA-Z0-9]{2,20}){1,2}");
+    Pattern email = Pattern.compile("\\S{1,30}@[a-zA-Z0-9]{2,20}(\\.[a-zA-Z0-9]{2,20}){1,2}");
+    Pattern guest = Pattern.compile("0x.+");
 
     @Override
     public UserDetails loadUserByUsername(String account/*此处的参数是登录账号，不一定是用户标识*/) throws UsernameNotFoundException {
+        if (guest.matcher(account).matches()) {
+            return guestUserDetails(account);
+        }
         LoginAccountCategory category = parseCategory(account);
         cj.geochat.uc.middle.UserDetails userDetails = userDetailsRemote.loadUserDetailsByAccount(category, account);
         if (userDetails == null) {
             throw new UsernameNotFoundException(account);
         }
-        return convertUserDetails(String.format("%s/%s", category.name(),account), userDetails);
+        return convertUserDetails(String.format("%s/%s", category.name(), account), userDetails);
+    }
+
+    private UserDetails guestUserDetails(String account) {
+        return GeochatUser
+                .withUserAndAccount(UlidCreator.getUlid().toLowerCase(), String.format("guest/%s", account))
+                .password(UlidCreator.getUlid().toLowerCase())
+                .disabled(false)
+                .accountExpired(false)
+                .credentialsExpired(false)
+                .accountLocked(false)
+                .roles(new String[]{
+                        "guests"
+                })
+                .build();
     }
 
     private UserDetails convertUserDetails(String accountFullName, cj.geochat.uc.middle.UserDetails userDetails) {

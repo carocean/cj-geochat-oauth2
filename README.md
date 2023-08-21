@@ -184,3 +184,8 @@ public class OpenOutsideAppConfig {
 ## 6、能力库
 > 以上均用到geochat能力库，更多能力，请到geochat能力库中查看，能力库项目的开源地址如下：  
 > [https://github.com/carocean/cj-geochat-ultimate](https://github.com/carocean/cj-geochat-ultimate)
+> 
+# 认证服务器新增验证码发放和授权端点
+- 手机短信验证码：已留接口可自由对接三方平台
+- 邮箱验证码：已留接口可自由对接三方平台
+- 访客验证码：对于开放的app获取访问令牌非常重要，系统会发放一个临时用户且分配guests角色来访问资源和接收消息推送。

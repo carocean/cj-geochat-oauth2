@@ -22,6 +22,7 @@ public class OpenOAuth2ServerConfig {
         return AuthorizationServerSettings.builder()
                 .authorizationEndpoint("/oauth2/v1/authorize")
                 .tokenEndpoint("/oauth2/v1/token")
+                .verificationCodeEndpoint("/oauth2/v1/verify_code")
                 .checkTokenEndpoint("/oauth2/v1/check_token")
                 .tokenRevocationEndpoint("/oauth2/v1/revoke")
                 .logoutEndpoint("/oauth2/v1/logout")

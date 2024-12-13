@@ -1,29 +1,29 @@
 # cj-geochat-oauth2
 
-这是一套微服务应用化架构的标准实现，它有以下能力：
-> 标准springboot/cloud例程，通过自定义的简化版oauth2认证协议，实现微服务应用化，天然支持应用前后端分离架构，多种客户端类型认证扩展。
-> 支持像微信这种移动平台兼容小程序的机制，为Saas提供基础架构支撑。
+This is a standard implementation of a microservices-based application architecture with the following capabilities:
+> A standard Spring Boot/Cloud example implements microservices application architecture through a customized, simplified OAuth2 authentication protocol. It naturally supports a front-end and back-end separation architecture and extends authentication for various client types.
+> It supports mechanisms compatible with mobile platforms like WeChat Mini Programs, providing foundational infrastructure support for SaaS.
 
-# 项目介绍
+# Project Introduction
 
-在分布式微服务环境中，有一些重要的角色，如认证、网关、业务微服务及中台服务微，如何划分，或如何拆解，哪些功能要放到哪些角色里去，不能单纯通过规范要求，
-而应该是一套架构的标准接口，就像spring一样你必须在其接口标准下实现你的功能。因此本项目提供了一整套微服务应用化标准接口。另外以下项目可以结合本人开源的基础能力库、配置中心、注册中心直接搭建你的微服务云架构。
-> 为了便于开发和部署，geochat的所有项目均支持docker,docker-compose,k8s的自动发布和部署，你需要配置你自己的nexus和docker-desktop，以便进行开发。
+In a distributed microservices environment, there are several critical roles, such as authentication, gateways, business microservices, and middle-tier microservices. Deciding how to divide or decompose these roles and determining which functionalities belong to which roles cannot rely solely on guidelines. Instead, it should follow a set of standardized architectural interfaces. Similar to Spring, where you must implement your functionalities within its standard interfaces, this project provides a complete set of standardized interfaces for microservices applications. Additionally, the project can be combined with my open-source foundational libraries, configuration center, and registration center to quickly build your microservices cloud architecture.
+> To facilitate development and deployment, all GeoChat projects support automated publishing and deployment using Docker, Docker Compose, and Kubernetes (K8s). You need to configure your own Nexus and Docker Desktop to proceed with development.
 
-本文档目录
-- 认证服务器
-- 网关
-- 内应用
-- 外应用
-- 中台应用
-- 基础能力库
+Table of Contents
 
-## 1、认证服务器
+	•	Authentication Server
+	•	Gateway
+	•	Internal Applications
+	•	External Applications
+	•	Middle-Tier Applications
+	•	Foundational Capability Library
+
+## 1、Authentication Server
 
 > cj-geochat-oauth2-server
 
-提供基本的认证方式：password, sms_code, blockchain_nonce, response_code, refresh_token
-> 依赖以下能力库，你可以根据这些能力库快速实现自己的认证服务器
+Provides basic authentication methods: password, sms_code, blockchain_nonce, response_code, refresh_token.
+> By relying on the following capability libraries, you can quickly implement your own authentication server based on them.
 
 ```xml
 
@@ -41,12 +41,12 @@
 </dependency>
 ```
 
-## 2、api网关
+## 2、api gateway
 
 > cj-geochat-oauth2-gateway
 
-提供路由、鉴权、限流、负载等功能。
-> 你可以根据以下能力库快带实现你的网关
+Provides functions such as routing, authentication, rate limiting, and load balancing.
+> You can quickly implement your gateway based on the following capability libraries.
 
 ```xml
 
@@ -56,32 +56,34 @@
 </dependency>
 ```
 
-## 3、内应用（网关后置应用标准）
+## 3、Internal Applications (Standard for Gateway-Backed Applications)
 
 > cj-geochat-test-iapp  
-> 内应用专有名词：iapp，即：inside app，表示该应用是网关内的应用，处理来自网关的请求。但中台应用（middle app)不同在于，
-> iapp有用户上下文和资源权限处理。
+> Internal Application Terminology: iApp, which stands for “inside app,” refers to an application within the gateway that handles requests from the gateway. However, it differs from a middle-tier application (middle app) in that:
 
-### 用法
+	iApp handles user context and resource permission management.
 
-项目结构：
-> 官主推荐一个iapp应用要包括一个子项目，分别是：framework、remote、starter
+### Usage
+
+Project Structure:
+> The official recommendation is that an iApp application should include a subproject with the following components: framework, remote, and starter.
 
 #### framework：
 
-> 主要用于接口和型形定义，由starter项目来实现功能，这样做的好处是，其它的应用可通过在其remote项目中引用该项目的framework，
-> 从而便捷的引用到该项目提供的api服务及类型。
+> It is mainly used for interface and type definitions, with the functionality implemented by the starter project. The advantage of this approach is that other applications can reference the framework of this project in their remote project,
+
+	thereby easily accessing the API services and types provided by this project.
 
 #### remote：
 
-> 通过feign访问远程api，它可借助于直接引用目标项目的framework而直接使用其类型。
+> By using Feign to access remote APIs, it can directly utilize the types of the target project by referencing its framework.
 
 #### starter:
 
-> 是iapp的功能实现包，需要什么样的功能就开启什么能力库。
+> It is the functional implementation package of the iApp. The required functionality is enabled by activating the corresponding capability libraries.
 > 你可以在你的项目包路径中建一个config包，将需要的能力加进去。
 
-开放内应用(InsideApp)能力：
+Open the Internal Application (InsideApp) Capability：
 
 ```java
 @EnableCjInsideApp
@@ -91,7 +93,7 @@ public class OpenInsideAppConfig {
 }
 
 ```
-开放Api能力：
+Open API Capability:
 
 ```java
 
@@ -102,7 +104,7 @@ public class OpenApiConfig {
 
 ```
 
-开放Eureka注册中心能力：
+Open Eureka Registration Center Capability:
 
 ```java
 
@@ -112,7 +114,7 @@ public class OpenEurekaConfig {
 }
 ```
 
-开放远程调用(feign)能力：
+Open Remote Call (Feign) Capability:
 
 ```java
 
@@ -124,7 +126,7 @@ public class OpenFeignConfig {
 
 ```
 
-开放spring doc能力：
+Open Spring Doc Capability:
 
 ```java
 
@@ -136,15 +138,15 @@ public class OpenSwaggerConfig {
 }
 ```
 
-## 4、外应用标准（不需要网关的应用）
+## 4、External Application Standard (Applications that do not require a gateway)
 > cj-geochat-test-oapp  
 > 
-> 由于外应用是直接面向公网的应用，因此它和网关一样提供鉴权能力，同时还具有访问控制能力。  
+> Since external applications are directly facing the public network, they provide authentication capabilities just like the gateway, and also have access control capabilities. 
 >    
-> 外应用标准名是：oapp，即outside app。  
-> 它与iapp一样具有framework,remote,starter三类子项目。  
+> The standard name for external applications is: oApp, which stands for outside app. 
+> It has the same three subprojects as iApp: framework, remote, and starter. 
 
-开放外应用(OutsideApp)能力：
+Open External Application (OutsideApp) Capability:
 
 ```java
 @EnableCjOutsideApp
@@ -169,23 +171,22 @@ public class OpenOutsideAppConfig {
 }
 
 ```
-如需要其它能力可自行添加。
+If additional capabilities are needed, you can add them yourself.
 
-## 5、中台服务标准
+## 5、Middle-Tier Service Standard
 > cj-geochat-test-middle  
 > 
-> 中台应用不对外网开放，被封密在网关之内，因此没有权限和用户上下文，是springboot的一般微服务。  
-> 标准名称是middle,建议在项目名称后面加上此名称。  
-> 
-> 它一样推荐有framework,remote,starter三个子项目。  
-> 
-> 需要什么能力就自行引用，这点根iapp和oapp引用能力的方式相同。
-> 
-## 6、能力库
-> 以上均用到geochat能力库，更多能力，请到geochat能力库中查看，能力库项目的开源地址如下：  
+> Middle-tier applications are not open to the public network and are enclosed within the gateway. Therefore, they do not have access to user context or > permissions and are typical Spring Boot microservices.
+> The standard name is “middle,” and it is recommended to add this name after the project name.
+>
+> It also recommends having the three subprojects: framework, remote, and starter.
+>
+> The required capabilities can be referenced as needed, which is the same as how iApp and oApp reference capabilities.
+## 6、Capability Library
+> The above all use the GeoChat capability library. For more capabilities, please refer to the GeoChat capability library. The open-source address for 》> the capability library project is as follows:  
 > [https://github.com/carocean/cj-geochat-ultimate](https://github.com/carocean/cj-geochat-ultimate)
 > 
-# 认证服务器新增验证码发放和授权端点
-- 手机短信验证码：已留接口可自由对接三方平台
-- 邮箱验证码：已留接口可自由对接三方平台
-- 访客验证码：对于开放的app获取访问令牌非常重要，系统会发放一个临时用户且分配guests角色来访问资源和接收消息推送。
+# The authentication server has added verification code issuance and authorization endpoints.
+-	SMS Verification Code: An interface has been provided for easy integration with third-party platforms.
+-	Email Verification Code: An interface has been provided for easy integration with third-party platforms.
+-	Visitor Verification Code: For open apps, obtaining an access token is crucial. The system will issue a temporary user and assign the “guests” role to access resources and receive message pushes.
